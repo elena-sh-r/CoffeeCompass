@@ -9,18 +9,11 @@ import UIKit
 
 class MainViewController: UITableViewController {
     
-    let coffeeHousesNames = [
-        "Кофейня 1554",
-        "Хочу кофе",
-        "Герои нашего времени",
-        "Кофе Культ",
-        "IT-coffee",
-        "Entrée"
-    ]
+    let coffeeHouses = CoffeeHouse.getCoffeeHouses()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
     }
 }
 
@@ -28,24 +21,19 @@ class MainViewController: UITableViewController {
 // MARK: - Table View Data Source
 extension MainViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        coffeeHousesNames.count
+        coffeeHouses.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomTableViewCell
         
-        cell.nameLabel.text = coffeeHousesNames[indexPath.row]
-        cell.imageOfCoffeeHouse.image = UIImage(named: coffeeHousesNames[indexPath.row])
+        cell.nameLabel.text = coffeeHouses[indexPath.row].name
+        cell.locationLabel.text = coffeeHouses[indexPath.row].location
+        cell.descriptionLabel.text = coffeeHouses[indexPath.row].description
+        cell.imageOfCoffeeHouse.image = UIImage(named: coffeeHouses[indexPath.row].image)
         cell.imageOfCoffeeHouse.layer.cornerRadius = cell.imageOfCoffeeHouse.frame.size.height / 2
         cell.imageOfCoffeeHouse.clipsToBounds = true
         
         return cell
-    }
-}
-
-// MARK: - Table View Delegate
-extension MainViewController {
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        85
     }
 }

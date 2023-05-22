@@ -7,16 +7,16 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Coffe Compas-->
+        <!--Coffee Compas-->
         <scene sceneID="VDU-WN-MmI">
             <objects>
                 <tableViewController id="DST-hp-guF" customClass="MainViewController" customModule="CoffeeCompass" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="85" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="cOL-I9-gJW">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="cOL-I9-gJW">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="WbE-eX-EGl" customClass="CustomTableViewCell" customModule="CoffeeCompass" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="85" id="WbE-eX-EGl" customClass="CustomTableViewCell" customModule="CoffeeCompass" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="50" width="393" height="85"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WbE-eX-EGl" id="gqr-jz-XNg">
@@ -48,10 +48,10 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="knV-wP-E1k">
-                                            <rect key="frame" x="95" y="54" width="262" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="knV-wP-E1k">
+                                            <rect key="frame" x="95" y="54" width="262" height="22"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="21" id="3my-pQ-BN7"/>
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="VEh-Qj-080"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="13"/>
                                             <nil key="textColor"/>
@@ -67,16 +67,17 @@
                                         <constraint firstAttribute="trailing" secondItem="z5m-3z-4Gr" secondAttribute="trailing" constant="16" id="Qv3-Df-G6D"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="oMo-sM-pQD" secondAttribute="trailing" constant="16" id="SBB-r2-cFV"/>
                                         <constraint firstItem="z5m-3z-4Gr" firstAttribute="top" secondItem="gqr-jz-XNg" secondAttribute="top" constant="9" id="h6d-kg-m77"/>
+                                        <constraint firstAttribute="bottom" secondItem="knV-wP-E1k" secondAttribute="bottom" constant="9" id="iKt-hV-bId"/>
                                         <constraint firstItem="knV-wP-E1k" firstAttribute="top" secondItem="oMo-sM-pQD" secondAttribute="bottom" constant="1" id="pOn-2y-aaW"/>
                                         <constraint firstItem="wXZ-2B-twy" firstAttribute="leading" secondItem="gqr-jz-XNg" secondAttribute="leading" constant="15" id="syg-4R-Td0"/>
                                         <constraint firstItem="oMo-sM-pQD" firstAttribute="top" secondItem="z5m-3z-4Gr" secondAttribute="bottom" constant="5" id="vUS-6t-nVz"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="descriptionLabel" destination="knV-wP-E1k" id="jAq-tp-9Xn"/>
                                     <outlet property="imageOfCoffeeHouse" destination="wXZ-2B-twy" id="AhB-3i-JFe"/>
                                     <outlet property="locationLabel" destination="oMo-sM-pQD" id="kiX-YY-enm"/>
                                     <outlet property="nameLabel" destination="z5m-3z-4Gr" id="DsK-GB-D8q"/>
-                                    <outlet property="typeLabel" destination="knV-wP-E1k" id="jAq-tp-9Xn"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -85,7 +86,7 @@
                             <outlet property="delegate" destination="DST-hp-guF" id="zfI-rT-UwC"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Coffe Compas" id="IGg-Tj-FbV"/>
+                    <navigationItem key="navigationItem" title="Coffee Compas" id="IGg-Tj-FbV"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="42h-PO-Bte" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
