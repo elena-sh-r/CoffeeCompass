@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		6CA707602A1AC45000851D5F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA7075F2A1AC45000851D5F /* AppDelegate.swift */; };
 		6CA707622A1AC45000851D5F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA707612A1AC45000851D5F /* SceneDelegate.swift */; };
-		6CA707642A1AC45000851D5F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA707632A1AC45000851D5F /* ViewController.swift */; };
+		6CA707642A1AC45000851D5F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA707632A1AC45000851D5F /* MainViewController.swift */; };
 		6CA707672A1AC45000851D5F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6CA707652A1AC45000851D5F /* Main.storyboard */; };
 		6CA707692A1AC45400851D5F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6CA707682A1AC45400851D5F /* Assets.xcassets */; };
 		6CA7076C2A1AC45400851D5F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6CA7076A2A1AC45400851D5F /* LaunchScreen.storyboard */; };
@@ -19,7 +19,7 @@
 		6CA7075C2A1AC45000851D5F /* CoffeeCompass.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoffeeCompass.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CA7075F2A1AC45000851D5F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6CA707612A1AC45000851D5F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		6CA707632A1AC45000851D5F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6CA707632A1AC45000851D5F /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		6CA707662A1AC45000851D5F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6CA707682A1AC45400851D5F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6CA7076B2A1AC45400851D5F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -94,7 +94,7 @@
 		6CA707762A1AC4DC00851D5F /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				6CA707632A1AC45000851D5F /* ViewController.swift */,
+				6CA707632A1AC45000851D5F /* MainViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -170,7 +170,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6CA707642A1AC45000851D5F /* ViewController.swift in Sources */,
+				6CA707642A1AC45000851D5F /* MainViewController.swift in Sources */,
 				6CA707602A1AC45000851D5F /* AppDelegate.swift in Sources */,
 				6CA707622A1AC45000851D5F /* SceneDelegate.swift in Sources */,
 			);
@@ -320,7 +320,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = CoffeeCompass/Info.plist;
+				INFOPLIST_FILE = CoffeeCompass/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -350,7 +350,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = CoffeeCompass/Info.plist;
+				INFOPLIST_FILE = CoffeeCompass/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
