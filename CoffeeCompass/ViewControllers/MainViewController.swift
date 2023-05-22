@@ -32,13 +32,12 @@ extension MainViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomTableViewCell
         
-        var content = cell.defaultContentConfiguration()
-        content.text = coffeeHousesNames[indexPath.row]
-        content.image = UIImage(named: coffeeHousesNames[indexPath.row])
-        content.imageProperties.cornerRadius = cell.frame.size.height / 2
-        cell.contentConfiguration = content
+        cell.nameLabel.text = coffeeHousesNames[indexPath.row]
+        cell.imageOfCoffeeHouse.image = UIImage(named: coffeeHousesNames[indexPath.row])
+        cell.imageOfCoffeeHouse.layer.cornerRadius = cell.imageOfCoffeeHouse.frame.size.height / 2
+        cell.imageOfCoffeeHouse.clipsToBounds = true
         
         return cell
     }
