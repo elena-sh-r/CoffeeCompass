@@ -8,6 +8,8 @@
 import UIKit
 
 final class NewCoffeeHouseViewController: UITableViewController {
+    @IBOutlet var imageOfCoffeeHouse: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.tableFooterView = UIView()
@@ -54,13 +56,21 @@ extension NewCoffeeHouseViewController: UITextFieldDelegate {
 }
 
 // MARK: - Work with image
-extension NewCoffeeHouseViewController {
+extension NewCoffeeHouseViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func chooseImagePicker(source: UIImagePickerController.SourceType) {
         if UIImagePickerController.isSourceTypeAvailable(source) {
             let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
             imagePicker.allowsEditing = true
             imagePicker.sourceType = source
             present(imagePicker, animated: true)
         }
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        imageOfCoffeeHouse.image = info[.editedImage] as? UIImage
+        imageOfCoffeeHouse.contentMode = .scaleAspectFill
+        imageOfCoffeeHouse.clipsToBounds = true
+        dismiss(animated: true)
     }
 }

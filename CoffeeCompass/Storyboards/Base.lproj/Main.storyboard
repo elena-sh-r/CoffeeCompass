@@ -109,15 +109,15 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Photo" translatesAutoresizingMaskIntoConstraints="NO" id="x80-IO-59b">
-                                                    <rect key="frame" x="20" y="11" width="353" height="228"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="393" height="250"/>
                                                 </imageView>
                                             </subviews>
                                             <color key="backgroundColor" red="0.85490196080000003" green="0.75294117650000003" blue="0.62352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
-                                                <constraint firstItem="x80-IO-59b" firstAttribute="top" secondItem="IGV-xC-XV4" secondAttribute="topMargin" id="83V-lN-ueS"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="x80-IO-59b" secondAttribute="trailing" id="8I8-42-3br"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="x80-IO-59b" secondAttribute="bottom" id="Won-xs-RfV"/>
-                                                <constraint firstItem="x80-IO-59b" firstAttribute="leading" secondItem="IGV-xC-XV4" secondAttribute="leadingMargin" id="gX0-qN-WAI"/>
+                                                <constraint firstItem="x80-IO-59b" firstAttribute="leading" secondItem="IGV-xC-XV4" secondAttribute="leading" id="DMD-Bl-oXe"/>
+                                                <constraint firstAttribute="bottom" secondItem="x80-IO-59b" secondAttribute="bottom" id="KjJ-7B-eJ3"/>
+                                                <constraint firstItem="x80-IO-59b" firstAttribute="top" secondItem="IGV-xC-XV4" secondAttribute="top" id="fxq-RQ-p8f"/>
+                                                <constraint firstAttribute="trailing" secondItem="x80-IO-59b" secondAttribute="trailing" id="uS2-o2-bRt"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -245,11 +245,14 @@
                             <color key="tintColor" red="0.80000000000000004" green="0.59999999999999998" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="imageOfCoffeeHouse" destination="x80-IO-59b" id="fg7-DB-2K2"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BYC-64-5Hk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="X5q-OG-0Je" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1836" y="-50"/>
+            <point key="canvasLocation" x="1835.8778625954199" y="-50"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="XYO-SJ-IVG">
