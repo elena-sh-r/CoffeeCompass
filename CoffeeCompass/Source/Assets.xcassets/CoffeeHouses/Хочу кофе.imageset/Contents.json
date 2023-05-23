@@ -6,10 +6,12 @@
       "scale" : "1x"
     },
     {
+      "filename" : "Хочу кофе 1.jpg",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "Хочу кофе 2.jpg",
       "idiom" : "universal",
       "scale" : "3x"
     }

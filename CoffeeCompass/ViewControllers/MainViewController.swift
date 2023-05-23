@@ -7,14 +7,15 @@
 
 import UIKit
 
-class MainViewController: UITableViewController {
+final class MainViewController: UITableViewController {
     
-    let coffeeHouses = CoffeeHouse.getCoffeeHouses()
+    private let coffeeHouses = CoffeeHouse.getCoffeeHouses()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
+    
+    @IBAction func cancelAction(_ segue: UIStoryboardSegue) {}
 }
 
 
