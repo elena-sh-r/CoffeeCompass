@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6C992BE82A1D01ED00615871 /* NewCoffeeHouseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C992BE72A1D01ED00615871 /* NewCoffeeHouseViewController.swift */; };
 		6CA707602A1AC45000851D5F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA7075F2A1AC45000851D5F /* AppDelegate.swift */; };
 		6CA707622A1AC45000851D5F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA707612A1AC45000851D5F /* SceneDelegate.swift */; };
 		6CA707642A1AC45000851D5F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA707632A1AC45000851D5F /* MainViewController.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6C992BE72A1D01ED00615871 /* NewCoffeeHouseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCoffeeHouseViewController.swift; sourceTree = "<group>"; };
 		6CA7075C2A1AC45000851D5F /* CoffeeCompass.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoffeeCompass.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CA7075F2A1AC45000851D5F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6CA707612A1AC45000851D5F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 			children = (
 				6CA707632A1AC45000851D5F /* MainViewController.swift */,
 				6CA707772A1B779600851D5F /* CustomTableViewCell.swift */,
+				6C992BE72A1D01ED00615871 /* NewCoffeeHouseViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -186,6 +189,7 @@
 			files = (
 				6CA707642A1AC45000851D5F /* MainViewController.swift in Sources */,
 				6CA7077B2A1B965000851D5F /* CoffeeHouseModel.swift in Sources */,
+				6C992BE82A1D01ED00615871 /* NewCoffeeHouseViewController.swift in Sources */,
 				6CA707602A1AC45000851D5F /* AppDelegate.swift in Sources */,
 				6CA707782A1B779600851D5F /* CustomTableViewCell.swift in Sources */,
 				6CA707622A1AC45000851D5F /* SceneDelegate.swift in Sources */,
