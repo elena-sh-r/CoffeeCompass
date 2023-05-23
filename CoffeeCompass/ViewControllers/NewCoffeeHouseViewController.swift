@@ -8,11 +8,42 @@
 import UIKit
 
 final class NewCoffeeHouseViewController: UITableViewController {
-    @IBOutlet var imageOfCoffeeHouse: UIImageView!
+    @IBOutlet var saveButton: UIBarButtonItem!
+    
+    @IBOutlet var coffeeHouseImage: UIImageView!
+    @IBOutlet var coffeeHouseName: UITextField!
+    @IBOutlet var coffeeHouseLocation: UITextField!
+    @IBOutlet var coffeeHouseDescription: UITextField!
+    
+    var newCoffeeHouse: CoffeeHouse?
+    var imageIsChanged = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.tableFooterView = UIView()
+        saveButton.isEnabled = false
+        coffeeHouseName.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
+    }
+    
+    @IBAction func cancelAction(_ sender: Any) {
+        dismiss(animated: true)
+    }
+    
+    
+    func saveNewCoffeeHouse() {
+        var image: UIImage?
+        
+        imageIsChanged
+            ? (image = coffeeHouseImage.image)
+            : (image = UIImage(named: "imagePlaceholder"))
+        
+        newCoffeeHouse = CoffeeHouse(
+            name: coffeeHouseName.text ?? "",
+            location: coffeeHouseLocation.text,
+            description: coffeeHouseDescription.text,
+            image: image,
+            coffeeHouseImage: nil
+        )
     }
 }
 
@@ -62,6 +93,12 @@ extension NewCoffeeHouseViewController: UITextFieldDelegate {
         textField.resignFirstResponder()
         return true
     }
+    
+    @objc private func textFieldChanged() {
+        (coffeeHouseName.text?.isEmpty == false)
+            ? (saveButton.isEnabled = true)
+            : (saveButton.isEnabled = false)
+    }
 }
 
 // MARK: - Work with image
@@ -77,9 +114,12 @@ extension NewCoffeeHouseViewController: UIImagePickerControllerDelegate, UINavig
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        imageOfCoffeeHouse.image = info[.editedImage] as? UIImage
-        imageOfCoffeeHouse.contentMode = .scaleAspectFill
-        imageOfCoffeeHouse.clipsToBounds = true
+        coffeeHouseImage.image = info[.editedImage] as? UIImage
+        coffeeHouseImage.contentMode = .scaleAspectFill
+        coffeeHouseImage.clipsToBounds = true
+        
+        imageIsChanged = true
+        
         dismiss(animated: true)
     }
 }

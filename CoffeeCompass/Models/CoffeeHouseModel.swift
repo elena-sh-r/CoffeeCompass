@@ -5,13 +5,14 @@
 //  Created by Elena Sharipova on 22.05.2023.
 //
 
-import Foundation
+import UIKit
 
 struct CoffeeHouse {
     var name: String
-    var location: String
-    var description: String
-    var image: String
+    var location: String?
+    var description: String?
+    var image: UIImage?
+    var coffeeHouseImage: String?
     
     static let coffeeHousesNames = [
         "Кофейня 1554",
@@ -30,7 +31,8 @@ struct CoffeeHouse {
                 name: coffeeHouse,
                 location: "Калуга",
                 description: "Кофе и авторские напитки",
-                image: coffeeHouse
+                image: nil,
+                coffeeHouseImage: coffeeHouse
             ))
         }
         

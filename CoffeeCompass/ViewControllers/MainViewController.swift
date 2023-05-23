@@ -9,13 +9,21 @@ import UIKit
 
 final class MainViewController: UITableViewController {
     
-    private let coffeeHouses = CoffeeHouse.getCoffeeHouses()
+    private var coffeeHouses = CoffeeHouse.getCoffeeHouses()
 
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
-    @IBAction func cancelAction(_ segue: UIStoryboardSegue) {}
+    @IBAction func unwindSegue(_ segue: UIStoryboardSegue) {
+        guard let newCoffeeHouseVC = segue.source as? NewCoffeeHouseViewController else { return }
+        newCoffeeHouseVC.saveNewCoffeeHouse()
+        
+        guard let newCoffeeHouse = newCoffeeHouseVC.newCoffeeHouse else { return }
+        coffeeHouses.append(newCoffeeHouse)
+        
+        tableView.reloadData()
+    }
 }
 
 
@@ -28,10 +36,18 @@ extension MainViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomTableViewCell
         
-        cell.nameLabel.text = coffeeHouses[indexPath.row].name
-        cell.locationLabel.text = coffeeHouses[indexPath.row].location
-        cell.descriptionLabel.text = coffeeHouses[indexPath.row].description
-        cell.imageOfCoffeeHouse.image = UIImage(named: coffeeHouses[indexPath.row].image)
+        let coffeeHouse = coffeeHouses[indexPath.row]
+        
+        cell.nameLabel.text = coffeeHouse.name
+        cell.locationLabel.text = coffeeHouse.location
+        cell.descriptionLabel.text = coffeeHouse.description
+        
+        (coffeeHouse.image == nil)
+            ? (cell.imageOfCoffeeHouse.image = UIImage(named: coffeeHouse.coffeeHouseImage ?? ""))
+            : (cell.imageOfCoffeeHouse.image = coffeeHouse.image)
+        
+        
+        
         cell.imageOfCoffeeHouse.layer.cornerRadius = cell.imageOfCoffeeHouse.frame.size.height / 2
         cell.imageOfCoffeeHouse.clipsToBounds = true
         

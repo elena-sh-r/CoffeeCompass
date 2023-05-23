@@ -11,42 +11,42 @@
         <scene sceneID="VDU-WN-MmI">
             <objects>
                 <tableViewController id="DST-hp-guF" customClass="MainViewController" customModule="CoffeeCompass" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="cOL-I9-gJW">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="85" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="cOL-I9-gJW">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="85" id="WbE-eX-EGl" customClass="CustomTableViewCell" customModule="CoffeeCompass" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="50" width="393" height="85"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="100" id="WbE-eX-EGl" customClass="CustomTableViewCell" customModule="CoffeeCompass" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="50" width="393" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WbE-eX-EGl" id="gqr-jz-XNg">
-                                    <rect key="frame" x="0.0" y="0.0" width="393" height="85"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wXZ-2B-twy">
-                                            <rect key="frame" x="15" y="10" width="65" height="65"/>
+                                            <rect key="frame" x="15" y="17.666666666666671" width="65" height="65"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="65" id="026-bh-G87"/>
                                                 <constraint firstAttribute="height" constant="65" id="ekg-cf-tQF"/>
                                             </constraints>
                                         </imageView>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="OwI-m7-Mvc">
-                                            <rect key="frame" x="96" y="8" width="281" height="69"/>
+                                            <rect key="frame" x="96" y="8" width="281" height="84"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z5m-3z-4Gr">
-                                                    <rect key="frame" x="0.0" y="0.0" width="281" height="24"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="281" height="29"/>
                                                     <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oMo-sM-pQD">
-                                                    <rect key="frame" x="0.0" y="27" width="281" height="21"/>
+                                                    <rect key="frame" x="0.0" y="32" width="281" height="26"/>
                                                     <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="knV-wP-E1k">
-                                                    <rect key="frame" x="0.0" y="51" width="281" height="18"/>
+                                                    <rect key="frame" x="0.0" y="61" width="281" height="23"/>
                                                     <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="13"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -238,15 +238,22 @@
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="DLm-ZM-cZT">
                             <color key="tintColor" red="0.80000000000000004" green="0.59999999999999998" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
-                                <segue destination="X5q-OG-0Je" kind="unwind" unwindAction="cancelAction:" id="osY-Ak-12g"/>
+                                <action selector="cancelAction:" destination="Lxm-po-OmI" id="W7Q-z5-lzq"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="b2R-a5-blH">
                             <color key="tintColor" red="0.80000000000000004" green="0.59999999999999998" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <segue destination="X5q-OG-0Je" kind="unwind" unwindAction="unwindSegue:" id="nyZ-5n-y7Y"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="imageOfCoffeeHouse" destination="x80-IO-59b" id="fg7-DB-2K2"/>
+                        <outlet property="coffeeHouseDescription" destination="Dbx-gh-I5c" id="mf4-cA-zYh"/>
+                        <outlet property="coffeeHouseImage" destination="x80-IO-59b" id="fg7-DB-2K2"/>
+                        <outlet property="coffeeHouseLocation" destination="T8F-NW-9ZP" id="l1z-DA-a8o"/>
+                        <outlet property="coffeeHouseName" destination="yOr-JA-1it" id="2BQ-7u-Oiq"/>
+                        <outlet property="saveButton" destination="b2R-a5-blH" id="Gkx-NF-iWD"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BYC-64-5Hk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
