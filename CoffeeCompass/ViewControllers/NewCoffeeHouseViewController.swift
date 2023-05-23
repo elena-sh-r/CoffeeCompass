@@ -20,19 +20,28 @@ final class NewCoffeeHouseViewController: UITableViewController {
 extension NewCoffeeHouseViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 {
+            let cameraIcon = UIImage(named: "camera")
+            let photoIcon = UIImage(named: "photo")
+            
             let actionSheet = UIAlertController(
                 title: nil,
                 message: nil,
                 preferredStyle: .actionSheet
             )
             
-            let camera = UIAlertAction(title: "Camera", style: .default) { _ in
+            let camera = UIAlertAction(title: "Camera", style: .default) { [unowned self] _ in
                 self.chooseImagePicker(source: .camera)
             }
             
-            let photo = UIAlertAction(title: "Photo", style: .default) { _ in
+            camera.setValue(cameraIcon, forKey: "image")
+            camera.setValue(CATextLayerAlignmentMode.left, forKey: "titleTextAlignment")
+            
+            let photo = UIAlertAction(title: "Photo", style: .default) { [unowned self] _ in
                 self.chooseImagePicker(source: .photoLibrary)
             }
+            
+            photo.setValue(photoIcon, forKey: "image")
+            photo.setValue(CATextLayerAlignmentMode.left, forKey: "titleTextAlignment")
             
             let cancel = UIAlertAction(title: "Cancel", style: .cancel)
             
