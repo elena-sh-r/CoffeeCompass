@@ -15,6 +15,8 @@ final class NewCoffeeHouseViewController: UITableViewController {
     @IBOutlet var coffeeHouseLocation: UITextField!
     @IBOutlet var coffeeHouseType: UITextField!
     
+    var currentCoffeeHouse: CoffeeHouse?
+    
     private let storageManager = StorageManager.shared
     private var imageIsChanged = false
     
@@ -24,13 +26,14 @@ final class NewCoffeeHouseViewController: UITableViewController {
         tableView.tableFooterView = UIView()
         saveButton.isEnabled = false
         coffeeHouseName.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
+        setupEditScreen()
     }
     
     @IBAction func cancelAction(_ sender: Any) {
         dismiss(animated: true)
     }
     
-    func saveNewCoffeeHouse() {
+    func saveCoffeeHouse() {
         var image: UIImage?
         
         imageIsChanged
@@ -46,7 +49,11 @@ final class NewCoffeeHouseViewController: UITableViewController {
             imageData: imageData
         )
         
-        storageManager.save(newCoffeeHouse)
+        if let currentCoffeeHouse = currentCoffeeHouse {
+            storageManager.edit(currentCoffeeHouse, newCoffeeHouse: newCoffeeHouse)
+        } else {
+            storageManager.save(newCoffeeHouse)
+        }
     }
 }
 
@@ -54,6 +61,7 @@ final class NewCoffeeHouseViewController: UITableViewController {
 extension NewCoffeeHouseViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 {
+            
             let cameraIcon = UIImage(named: "camera")
             let photoIcon = UIImage(named: "photo")
             
@@ -90,7 +98,45 @@ extension NewCoffeeHouseViewController {
     }
 }
 
-// MARK: - Text field delegate
+// MARK: - Setup
+extension NewCoffeeHouseViewController {
+    private func setupEditScreen() {
+        if currentCoffeeHouse != nil {
+            
+            setupNavigationBar()
+            imageIsChanged = true
+            
+            guard let data = currentCoffeeHouse?.imageData,
+                    let image = UIImage(data: data) else { return }
+            
+            coffeeHouseImage.image = image
+            coffeeHouseImage.contentMode = .scaleAspectFill
+            coffeeHouseName.text = currentCoffeeHouse?.name
+            coffeeHouseLocation.text = currentCoffeeHouse?.location
+            coffeeHouseType.text = currentCoffeeHouse?.type
+        }
+    }
+    
+    private func setupNavigationBar() {
+        if let topItem = navigationController?.navigationBar.topItem {
+            topItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+            topItem.backBarButtonItem?.tintColor = UIColor(
+                cgColor: CGColor(
+                    red: 204 / 255,
+                    green: 153 / 255,
+                    blue: 102 / 255,
+                    alpha: 1
+                )
+            )
+        }
+        
+        navigationItem.leftBarButtonItem = nil
+        title = currentCoffeeHouse?.name
+        saveButton.isEnabled = true
+    }
+}
+
+// MARK: Text field delegate
 extension NewCoffeeHouseViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()

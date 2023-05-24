@@ -26,6 +26,15 @@ final class StorageManager {
         }
     }
     
+    func edit(_ coffeeHouse: CoffeeHouse, newCoffeeHouse: CoffeeHouse) {
+        write {
+            coffeeHouse.name = newCoffeeHouse.name
+            coffeeHouse.location = newCoffeeHouse.location
+            coffeeHouse.type = newCoffeeHouse.type
+            coffeeHouse.imageData = newCoffeeHouse.imageData
+        }
+    }
+    
     func delete(_ coffeeHouse: CoffeeHouse) {
         write {
             realm.delete(coffeeHouse)
