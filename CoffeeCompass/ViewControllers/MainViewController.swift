@@ -28,7 +28,7 @@ final class MainViewController: UITableViewController {
 }
 
 
-// MARK: - Table View Data Source
+// MARK: - Table view data source
 extension MainViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         coffeeHouses.isEmpty ? 0 : coffeeHouses.count
@@ -48,5 +48,16 @@ extension MainViewController {
         cell.imageOfCoffeeHouse.clipsToBounds = true
 
         return cell
+    }
+}
+
+// MARK: - Table view delegate
+extension MainViewController {
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let coffeeHouse = coffeeHouses[indexPath.row]
+            storageManager.delete(coffeeHouse)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
     }
 }

@@ -5,9 +5,7 @@
 //  Created by Elena Sharipova on 23.05.2023.
 //
 
-import Foundation
 import RealmSwift
-
 
 final class StorageManager {
     static let shared = StorageManager()
@@ -25,6 +23,12 @@ final class StorageManager {
     func save(_ coffeeHouse: CoffeeHouse) {
         write {
             realm.add(coffeeHouse)
+        }
+    }
+    
+    func delete(_ coffeeHouse: CoffeeHouse) {
+        write {
+            realm.delete(coffeeHouse)
         }
     }
     
