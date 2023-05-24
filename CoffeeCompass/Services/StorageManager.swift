@@ -8,16 +8,6 @@
 import Foundation
 import RealmSwift
 
-//let realm = try! Realm()
-//
-//class StorageManager {
-//    static func save(_ coffeeHouse: CoffeeHouse) {
-//        try! realm.write({
-//            realm.add(coffeeHouse)
-//        })
-//    }
-//}
-
 
 final class StorageManager {
     static let shared = StorageManager()
