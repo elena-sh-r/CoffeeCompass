@@ -13,13 +13,14 @@ final class NewCoffeeHouseViewController: UITableViewController {
     @IBOutlet var coffeeHouseImage: UIImageView!
     @IBOutlet var coffeeHouseName: UITextField!
     @IBOutlet var coffeeHouseLocation: UITextField!
-    @IBOutlet var coffeeHouseDescription: UITextField!
+    @IBOutlet var coffeeHouseType: UITextField!
     
-    var newCoffeeHouse: CoffeeHouse?
-    var imageIsChanged = false
+    private let storageManager = StorageManager.shared
+    private var imageIsChanged = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         tableView.tableFooterView = UIView()
         saveButton.isEnabled = false
         coffeeHouseName.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
@@ -29,7 +30,6 @@ final class NewCoffeeHouseViewController: UITableViewController {
         dismiss(animated: true)
     }
     
-    
     func saveNewCoffeeHouse() {
         var image: UIImage?
         
@@ -37,13 +37,16 @@ final class NewCoffeeHouseViewController: UITableViewController {
             ? (image = coffeeHouseImage.image)
             : (image = UIImage(named: "imagePlaceholder"))
         
-        newCoffeeHouse = CoffeeHouse(
+        let imageData = image?.pngData()
+
+        let newCoffeeHouse = CoffeeHouse(
             name: coffeeHouseName.text ?? "",
             location: coffeeHouseLocation.text,
-            description: coffeeHouseDescription.text,
-            image: image,
-            coffeeHouseImage: nil
+            type: coffeeHouseType.text,
+            imageData: imageData
         )
+        
+        storageManager.save(newCoffeeHouse)
     }
 }
 
