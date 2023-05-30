@@ -192,8 +192,8 @@
                                 <rect key="frame" x="0.0" y="103" width="393" height="32"/>
                                 <color key="backgroundColor" red="0.80000000000000004" green="0.59999999999999998" blue="0.40000000000000002" alpha="0.5" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <segments>
-                                    <segment title="First"/>
-                                    <segment title="Second"/>
+                                    <segment title="Date"/>
+                                    <segment title="Name"/>
                                 </segments>
                                 <color key="selectedSegmentTintColor" systemColor="systemBrownColor"/>
                                 <connections>

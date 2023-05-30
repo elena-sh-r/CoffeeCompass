@@ -57,6 +57,14 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		6C844FD42A25253300EF7090 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6CA707772A1B779600851D5F /* CustomTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		6CA707532A1AC45000851D5F = {
 			isa = PBXGroup;
 			children = (
@@ -79,6 +87,7 @@
 				6CA707792A1B962B00851D5F /* Models */,
 				6C844FD12A1D527300EF7090 /* Services */,
 				6CA707762A1AC4DC00851D5F /* ViewControllers */,
+				6C844FD42A25253300EF7090 /* Views */,
 				6CA707752A1AC4CE00851D5F /* Storyboards */,
 				6CA707732A1AC4A800851D5F /* App */,
 				6CA707742A1AC4BA00851D5F /* Source */,
@@ -117,7 +126,6 @@
 			isa = PBXGroup;
 			children = (
 				6CA707632A1AC45000851D5F /* MainViewController.swift */,
-				6CA707772A1B779600851D5F /* CustomTableViewCell.swift */,
 				6C992BE72A1D01ED00615871 /* NewCoffeeHouseViewController.swift */,
 			);
 			path = ViewControllers;
