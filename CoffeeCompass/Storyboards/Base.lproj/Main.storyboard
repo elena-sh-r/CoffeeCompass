@@ -145,6 +145,23 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="140" id="DM2-1s-8Bo">
+                                        <rect key="frame" x="0.0" y="540" width="393" height="140"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DM2-1s-8Bo" id="Nqf-s3-qQf">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="140"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="7qg-rx-YTG" customClass="RatingControl" customModule="CoffeeCompass" customModuleProvider="target">
+                                                    <rect key="frame" x="70.666666666666686" y="48" width="251.99999999999994" height="44"/>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="7qg-rx-YTG" firstAttribute="centerY" secondItem="Nqf-s3-qQf" secondAttribute="centerY" id="2zw-8e-wFE"/>
+                                                <constraint firstItem="7qg-rx-YTG" firstAttribute="centerX" secondItem="Nqf-s3-qQf" secondAttribute="centerX" id="saT-w3-D98"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
