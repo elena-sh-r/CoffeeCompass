@@ -12,13 +12,13 @@
         <scene sceneID="8SB-Lm-CJ9">
             <objects>
                 <tableViewController id="Lxm-po-OmI" customClass="NewCoffeeHouseViewController" customModule="CoffeeCompass" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="vla-2b-fAu">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="vla-2b-fAu">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <inset key="separatorInset" minX="16" minY="0.0" maxX="16" maxY="0.0"/>
                         <sections>
-                            <tableViewSection id="WVC-iD-CcL">
+                            <tableViewSection headerTitle="" id="WVC-iD-CcL">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="250" id="68Q-fz-OXD">
                                         <rect key="frame" x="0.0" y="50" width="393" height="250"/>
@@ -39,6 +39,7 @@
                                                 <constraint firstAttribute="trailing" secondItem="x80-IO-59b" secondAttribute="trailing" id="fo0-fX-mjq"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="80" id="T4r-Kb-Koi">
                                         <rect key="frame" x="0.0" y="300" width="393" height="80"/>
@@ -152,13 +153,13 @@
                                             <rect key="frame" x="0.0" y="0.0" width="393" height="140"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="7qg-rx-YTG" customClass="RatingControl" customModule="CoffeeCompass" customModuleProvider="target">
-                                                    <rect key="frame" x="70.666666666666686" y="48" width="251.99999999999994" height="44"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="251.99999999999994" placeholderIntrinsicHeight="44" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="7qg-rx-YTG" customClass="RatingControl" customModule="CoffeeCompass" customModuleProvider="target">
+                                                    <rect key="frame" x="70.666666666666686" y="48" width="252" height="44"/>
                                                 </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="7qg-rx-YTG" firstAttribute="centerY" secondItem="Nqf-s3-qQf" secondAttribute="centerY" id="2zw-8e-wFE"/>
-                                                <constraint firstItem="7qg-rx-YTG" firstAttribute="centerX" secondItem="Nqf-s3-qQf" secondAttribute="centerX" id="saT-w3-D98"/>
+                                                <constraint firstItem="7qg-rx-YTG" firstAttribute="centerY" secondItem="Nqf-s3-qQf" secondAttribute="centerY" id="TCk-uU-8RQ"/>
+                                                <constraint firstItem="7qg-rx-YTG" firstAttribute="centerX" secondItem="Nqf-s3-qQf" secondAttribute="centerX" id="c4Y-fz-EiM"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -366,6 +367,11 @@
             <point key="canvasLocation" x="1149" y="-734"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="7qg-rx-YTG">
+            <size key="intrinsicContentSize" width="251.99999999999994" height="44"/>
+        </designable>
+    </designables>
     <inferredMetricsTieBreakers>
         <segue reference="SAB-6M-FE0"/>
     </inferredMetricsTieBreakers>
