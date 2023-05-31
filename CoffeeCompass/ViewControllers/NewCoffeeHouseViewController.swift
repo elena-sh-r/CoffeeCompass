@@ -8,18 +8,22 @@
 import UIKit
 
 final class NewCoffeeHouseViewController: UITableViewController {
+    // MARK: IB Outlets
     @IBOutlet var saveButton: UIBarButtonItem!
-    
     @IBOutlet var coffeeHouseImage: UIImageView!
     @IBOutlet var coffeeHouseName: UITextField!
     @IBOutlet var coffeeHouseLocation: UITextField!
     @IBOutlet var coffeeHouseType: UITextField!
+    @IBOutlet var ratingControl: RatingControl!
     
-    var currentCoffeeHouse: CoffeeHouse?
+    // MARK: - Public Properties
+    var currentCoffeeHouse: CoffeeHouse! // свойство используем только в том случае, когда редактируем существующий объект, значит все поля дефакто инициализированы и не имеют nil
     
+    // MARK: - Private Properties
     private let storageManager = StorageManager.shared
     private var imageIsChanged = false
     
+    // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -40,10 +44,12 @@ final class NewCoffeeHouseViewController: UITableViewController {
         setupEditScreen()
     }
     
+    // MARK: - IB Actions
     @IBAction func cancelAction(_ sender: Any) {
         dismiss(animated: true)
     }
     
+    // MARK: - Public Methods
     func saveCoffeeHouse() {
         var image: UIImage?
         
@@ -57,7 +63,8 @@ final class NewCoffeeHouseViewController: UITableViewController {
             name: coffeeHouseName.text ?? "",
             location: coffeeHouseLocation.text,
             type: coffeeHouseType.text,
-            imageData: imageData
+            imageData: imageData,
+            rating: Double(ratingControl.rating)
         )
         
         if let currentCoffeeHouse = currentCoffeeHouse {
@@ -68,7 +75,7 @@ final class NewCoffeeHouseViewController: UITableViewController {
     }
 }
 
-// MARK: - Table view delegate
+// MARK: - Table View Delegate
 extension NewCoffeeHouseViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 {
@@ -125,6 +132,7 @@ extension NewCoffeeHouseViewController {
             coffeeHouseName.text = currentCoffeeHouse?.name
             coffeeHouseLocation.text = currentCoffeeHouse?.location
             coffeeHouseType.text = currentCoffeeHouse?.type
+            ratingControl.rating = Int(currentCoffeeHouse.rating)
         }
     }
     

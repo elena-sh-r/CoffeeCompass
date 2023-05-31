@@ -32,6 +32,7 @@ final class StorageManager {
             coffeeHouse.location = newCoffeeHouse.location
             coffeeHouse.type = newCoffeeHouse.type
             coffeeHouse.imageData = newCoffeeHouse.imageData
+            coffeeHouse.rating = newCoffeeHouse.rating
         }
     }
     

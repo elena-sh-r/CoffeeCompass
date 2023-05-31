@@ -190,6 +190,7 @@
                         <outlet property="coffeeHouseLocation" destination="T8F-NW-9ZP" id="l1z-DA-a8o"/>
                         <outlet property="coffeeHouseName" destination="yOr-JA-1it" id="2BQ-7u-Oiq"/>
                         <outlet property="coffeeHouseType" destination="Dbx-gh-I5c" id="mf4-cA-zYh"/>
+                        <outlet property="ratingControl" destination="7qg-rx-YTG" id="tFX-KI-g7e"/>
                         <outlet property="saveButton" destination="b2R-a5-blH" id="Gkx-NF-iWD"/>
                     </connections>
                 </tableViewController>
